@@ -9,6 +9,7 @@ import { Character } from "./Character";
 ********************************/
 class Enemy extends Character {
 	update() {
+		super.update();
 		enemyMove1(this);
 	}
 

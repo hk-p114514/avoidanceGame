@@ -7,6 +7,7 @@ import { gameLoop } from "./gameLoop";
 import { Enemy } from "./class/Enemy";
 import { Player } from "./class/Player";
 import { rand } from "./functions/rand";
+import { makeEnemy } from "./functions/makeEnemy";
 
 // html要素の取得
 const canvas: HTMLCanvasElement = getCanvas();
@@ -44,17 +45,7 @@ const player = new Player(
 
 //- 敵キャラクターのインスタンス
 const enemy: Enemy[] = [];
-for (let i = 0; i < consts.maxEnemyCount; i++) {
-	enemy.push(
-		new Enemy(
-			rand(0, consts.canvasWidth),
-			rand(0, consts.canvasHeight),
-			rand(1, 10),
-			rand(1, 10),
-			10,
-		),
-	);
-}
+makeEnemy(consts.maxEnemyCount);
 
 // canvasのサイズ指定
 canvas.width = consts.canvasWidth;

@@ -1,27 +1,27 @@
 module.exports = {
-  mode: "development",
+	mode: "production",
 
-  entry: "./src/main.ts",
-  output: {
-    path: `${__dirname}/dist`,
-    filename: "bundle.js",
-  },
+	entry: "./src/main.ts",
+	output: {
+		path: `${__dirname}/dist`,
+		filename: "bundle.js",
+	},
 
-  module: {
-    rules: [
-      {
-        test: /\.ts$/,
-        use: "ts-loader",
-      },
-    ],
-  },
+	module: {
+		rules: [
+			{
+				test: /\.ts$/,
+				use: "ts-loader",
+			},
+		],
+	},
 
-  resolve: {
-    extensions: [".js", ".ts"],
-  },
+	resolve: {
+		extensions: [".js", ".ts"],
+	},
 
-  devServer: {
-    contentBase: "./dist/",
-    hot: true,
-  },
+	devServer: {
+		contentBase: "./dist/",
+		hot: true,
+	},
 };

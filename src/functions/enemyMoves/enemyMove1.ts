@@ -10,21 +10,24 @@ import { rand } from "../rand";
  ********************************/
 const enemyMove1 = (object: Enemy) => {
 	/********************************/
-
-	// 範囲チェック
 	// 範囲外に出ていたら、ベクトルを逆向きにする
+	const gap = 5;
 	if (!(object.x >= object.radius && object.x <= consts.canvasWidth)) {
-		object.vectorX = -1 * object.vectorX;
+		if (!rand(0, 3)) {
+			object.vectorX += rand(-gap, gap);
+		}
+		object.vectorX *= -1;
 	}
-	if (object.y >= object.radius && object.y <= consts.canvasHeight) {
-		object.vectorY = -1 * object.vectorY;
+	if (!(object.y >= object.radius && object.y <= consts.canvasHeight)) {
+		if (!rand(0, 3)) {
+			object.vectorY += rand(-gap, gap);
+		}
+		object.vectorY *= -1;
 	}
-
 	/********************************/
-	const gapX = 1;
-	const gapY = 5;
-	object.x += object.vectorX + rand(-gapX, gapX);
-	object.y += object.vectorY + rand(-gapY, gapY);
+
+	object.x += object.vectorX;
+	object.y += object.vectorY;
 };
 
 export { enemyMove1 };

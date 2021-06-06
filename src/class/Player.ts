@@ -7,6 +7,7 @@ import { Character } from "./Character";
 
 class Player extends Character {
 	update() {
+		super.update();
 		playerControl(this);
 	}
 

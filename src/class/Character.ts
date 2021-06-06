@@ -1,7 +1,7 @@
 "use strict";
 
-import { drawObject } from "../functions/drawObject";
-import { consts } from "../main";
+import { checkBlock } from "../functions/checkBlock";
+import { Block } from "../type/block";
 
 /********************************
 	Characterクラス　
@@ -17,6 +17,7 @@ class Character {
 	vectorY: number; // y座標のベクトル
 	radius: number; // ゲーム内での半径
 	death: boolean; // 死判定
+	block: Block; // ゲームのフィールドにおける区画
 	constructor(
 		x: number,
 		y: number,
@@ -30,6 +31,10 @@ class Character {
 		this.vectorY = vectorY;
 		this.radius = radius;
 		this.death = false;
+		this.block = 0;
+	}
+	update() {
+		this.block = checkBlock(this, this.x, this.y, this.radius);
 	}
 }
 
