@@ -24,6 +24,8 @@ const consts = {
 	enemyColor: "#6638f0",
 };
 
+const damageEffectColor = "rgba(255, 0, 0, 0.4)";
+
 const keysProperty = {
 	up: false,
 	right: false,
@@ -53,4 +55,4 @@ canvas.height = consts.canvasHeight;
 setInterval(gameLoop, consts.fps);
 
 // 変数、定数のエクスポート
-export { consts, keysProperty, player, DEBUG, ctx, enemy };
+export { consts, keysProperty, player, DEBUG, ctx, enemy, damageEffectColor };
