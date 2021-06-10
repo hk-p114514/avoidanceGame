@@ -6,13 +6,11 @@ import { getContext } from "./init/getContext";
 import { gameLoop } from "./gameLoop";
 import { Enemy } from "./class/Enemy";
 import { Player } from "./class/Player";
-import { rand } from "./functions/rand";
 import { makeEnemy } from "./functions/makeEnemy";
 
 // html要素の取得
 const canvas: HTMLCanvasElement = getCanvas();
 const ctx = getContext(canvas);
-const point = document.getElementById("point");
 // 各種定数の宣言
 const consts = {
 	fps: 1000 / 30,
@@ -55,4 +53,4 @@ canvas.height = consts.canvasHeight;
 setInterval(gameLoop, consts.fps);
 
 // 変数、定数のエクスポート
-export { consts, keysProperty, player, point, DEBUG, ctx, enemy };
+export { consts, keysProperty, player, DEBUG, ctx, enemy };
