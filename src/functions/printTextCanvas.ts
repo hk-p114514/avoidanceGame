@@ -12,6 +12,7 @@ const printTextCanvas = (texts: string[], fontSize: number) => {
 		ctx.font = `bold ${fontSize}px verdana`;
 		for (let i = 0; i < texts.length; i++) {
 			ctx.fillText(texts[i], baseX, baseY);
+			baseY += fontSize;
 		}
 	}
 };

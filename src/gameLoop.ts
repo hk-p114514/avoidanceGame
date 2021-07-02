@@ -1,7 +1,7 @@
 "use strict";
 
 import { enemyLoop } from "./enemyLoop";
-import { printTextCanvas } from "./functions/printTextCanvas";
+import { infoPrint } from "./functions/infoPrint";
 import { keyMove } from "./init/keyMove";
 import { ctx, player, consts, enemy } from "./main";
 
@@ -11,12 +11,13 @@ const gameLoop = () => {
 	if (ctx) {
 		ctx.clearRect(0, 0, consts.canvasWidth, consts.canvasHeight);
 	}
+
+	// 敵キャラ全てのアップデートと描画を行う
 	enemyLoop();
 	player.update();
 	player.draw();
 
-	const canvasMessages = [`enemies : ${enemy.length}`];
-	printTextCanvas(canvasMessages, 20);
+	infoPrint();
 };
 
 export { gameLoop };

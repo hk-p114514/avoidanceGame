@@ -12,7 +12,7 @@ const makeEnemy = (enemyCount: number) => {
 				rand(0, consts.canvasHeight),
 				rand(1, 10),
 				rand(1, 10),
-				10,
+				consts.enemyRadius,
 			),
 		);
 	}

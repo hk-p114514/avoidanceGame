@@ -22,6 +22,10 @@ const consts = {
 	maxEnemyCount: 10,
 	//- 敵キャラクターの色
 	enemyColor: "#6638f0",
+	// 敵キャラクターの基本半径
+	enemyRadius: 10,
+	// ゲームの経過時間
+	gameTime: 0,
 };
 
 const damageEffectColor = "rgba(255, 0, 0, 0.4)";
