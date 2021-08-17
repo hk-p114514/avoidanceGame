@@ -26,6 +26,12 @@ const consts = {
 	enemyRadius: 10,
 	// ゲームの経過時間
 	gameTime: 0,
+	// 何ステージ目かを表す
+	stage: 0,
+	// ステージの最大数
+	maxStage: 3,
+	// ゲームのクリア判定
+	gameClear: false,
 };
 
 const damageEffectColor = "rgba(255, 0, 0, 0.4)";

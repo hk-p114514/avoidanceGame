@@ -10,6 +10,7 @@ const infoPrint = () => {
 
 	// 敵キャラクターの残数を表示
 	const canvasMessages = [
+		`STAGE : ${consts.stage + 1}`,
 		`enemies : ${enemy.length}`,
 		`${time.toFixed(2)} s`,
 	];

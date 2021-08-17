@@ -6,18 +6,20 @@ import { keyMove } from "./init/keyMove";
 import { ctx, player, consts, enemy } from "./main";
 
 const gameLoop = () => {
-	keyMove();
 	//- 画面をクリア
 	if (ctx) {
 		ctx.clearRect(0, 0, consts.canvasWidth, consts.canvasHeight);
 	}
+	if (!consts.gameClear) {
+		keyMove();
 
-	// 敵キャラ全てのアップデートと描画を行う
-	enemyLoop();
-	player.update();
-	player.draw();
+		// 敵キャラ全てのアップデートと描画を行う
+		enemyLoop();
+		player.update();
+		player.draw();
 
-	infoPrint();
+		infoPrint();
+	}
 };
 
 export { gameLoop };

@@ -1,6 +1,7 @@
 "use strict";
 
 import { checkHit } from "./functions/checkHit";
+import { gameClear } from "./functions/gameClear";
 import { makeEnemy } from "./functions/makeEnemy";
 import { consts, enemy } from "./main";
 
@@ -17,9 +18,13 @@ const enemyLoop = () => {
 		enemy[i].draw(); // CharacterクラスからdrawObject()を呼び出す
 	}
 
-	if (enemy.length <= 0) {
-		// consts.maxEnemyCount += consts.maxEnemyCount / 2;
+	if (enemy.length <= 0 && consts.stage < consts.maxStage) {
+		consts.maxEnemyCount += consts.maxEnemyCount / 2;
+		consts.stage++;
 		makeEnemy(consts.maxEnemyCount);
+	} else if (consts.stage >= consts.maxStage) {
+		consts.gameClear = true;
+		gameClear();
 	}
 };
 
